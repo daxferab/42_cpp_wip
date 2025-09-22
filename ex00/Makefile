@@ -15,11 +15,11 @@ $(OBJ): $(SRC)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(NAME).o
+	rm -rf $(OBJ)
 
 fclean: clean
 	rm -rf $(NAME)
 
-re: clean all
+re: fclean all
 
 .PHONY: all clean re fclean

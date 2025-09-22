@@ -6,23 +6,23 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = \
 		Contact.cpp\
 		main.cpp\
-		PhoneBook.cpp\
+		PhoneBook.cpp
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $< -o $@
+	$(CC) $(FLAGS) $^ -o $@
 
-$(OBJ): $(SRC)
+%.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(NAME).o
+	rm -rf $(OBJ)
 
 fclean: clean
 	rm -rf $(NAME)
 
-re: clean all
+re: fclean all
 
 .PHONY: all clean re fclean

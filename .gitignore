@@ -1,2 +1,5 @@
-ex00/megaphone
+megaphone
+phonebook
+*.o
 en.subject.pdf
+.vscode
