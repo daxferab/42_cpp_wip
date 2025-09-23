@@ -1,5 +1,8 @@
 megaphone
 phonebook
+account
 *.o
-en.subject.pdf
+*subject.pdf
 .vscode
+19920104_091532.log
+.gitignore

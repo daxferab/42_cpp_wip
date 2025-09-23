@@ -1,2 +1,2 @@
-# 42_Cpp-00
-First OOP project
+# 42_Cpp
+First OOP projects
