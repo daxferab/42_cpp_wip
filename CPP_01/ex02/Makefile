@@ -1,9 +1,9 @@
-NAME = 
+NAME = zombiePointers
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = 
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
