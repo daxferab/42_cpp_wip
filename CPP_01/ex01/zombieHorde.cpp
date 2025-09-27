@@ -4,13 +4,12 @@ Zombie* zombieHorde(int N, std::string name)
 {
 	Zombie *horde;
 
+	horde = NULL;
 	if (N < 0)
-		//return (std::cout << "Invalid negative number" << std::endl);
+		return (std::cout << "Invalid negative number" << std::endl, horde);
 
-	//horde = new Zombie[N];
+	horde = new Zombie[N];
 	for (int i = 0; i < N; i++)
-	{
-		//horde[i] = new Zombie(name);
-	}
+		horde[i].setName(name);
 	return (horde);
 }
