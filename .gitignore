@@ -5,4 +5,4 @@ account
 *subject.pdf
 .vscode
 19920104_091532.log
-.gitignore
+infile*
