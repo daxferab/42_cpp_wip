@@ -19,7 +19,7 @@ clean:
 	rm -rf $(OBJ)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) *.replace
 
 re: fclean all
 
