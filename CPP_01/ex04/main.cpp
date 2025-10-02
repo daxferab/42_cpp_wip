@@ -16,21 +16,24 @@ void	replaceString(std::ifstream &file, std::ofstream &newFile, std::string subs
 			newFile << line << std::endl;
 			continue;
 		}
-		while (line.find(substring))
+		while (!line.empty())
 		{
+			if (line.find(substring) == (long unsigned int)-1)
+			{
+				newline.append(line);
+				break;
+			}
 			pos = line.find(substring);
-			newline.append(line, pos);
+			newline.append(line, 0, pos);
 			newline.append(replacement);
 			line = line.substr(pos + stringlen);
 		}
 		newFile << newline << std::endl;
-		stringlen = 0;
+		stringlen = substring.length();
 		pos = 0;
 		newline.clear();
 	}
 }
-
-// [1]file [2]string to replace [3]replacement
 
 int	main(int argc, char* argv[])
 {
