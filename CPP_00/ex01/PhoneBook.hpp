@@ -2,6 +2,8 @@
 # define PHONEBOOK_HPP
 
 # include <iomanip>
+# include <iostream>
+# include <string>
 # include "Contact.hpp"
 
 class PhoneBook
@@ -9,7 +11,6 @@ class PhoneBook
 	private:
 		static const int	MAX_COUNT = 8;
 		Contact 			contacts[MAX_COUNT];
-		int					count;
 		int					storedContacts;
 	public:
 		PhoneBook();

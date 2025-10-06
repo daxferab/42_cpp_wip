@@ -1,14 +1,17 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : count(0), storedContacts(0){}
+PhoneBook::PhoneBook() : storedContacts(0){}
 
 void	PhoneBook::add()
 {
-	if (count >= MAX_COUNT)
-		count = 0;
 	std::cout << std::endl;
-	contacts[count++].fill();
-	if (storedContacts < MAX_COUNT) storedContacts++;
+
+	if (storedContacts == MAX_COUNT)
+		for (int i = 0; i < MAX_COUNT - 1; i++)
+			contacts[i] = contacts[i + 1];
+	else
+		storedContacts++;
+	contacts[storedContacts - 1].fill();
 	std::cout << "Contact added." << std::endl << std::endl;
 }
 
@@ -16,7 +19,7 @@ void	PhoneBook::search() const
 {
 	std::string	contactIndex;
 
-	if (count > 0)
+	if (storedContacts > 0)
 	{
 		printRow("Index", "First Name", "Last Name", "Nickname");
 		for (int i = 0; i < storedContacts; i++)
