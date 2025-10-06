@@ -14,10 +14,10 @@ class PhoneBook
 	public:
 		PhoneBook();
 		void				add();
-		void				search();
-		void				display(int index);
-		void				printRow(std::string field1, std::string field2, std::string field3, std::string field4);
-		void				printRow(int field1, std::string field2, std::string field3, std::string field4);
+		void				search() const;
+		void				display(int index) const;
+		void				printRow(std::string field1, std::string field2, std::string field3, std::string field4) const;
+		void				printRow(int field1, std::string field2, std::string field3, std::string field4) const;
 };
 
 #endif

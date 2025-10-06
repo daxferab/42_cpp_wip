@@ -12,7 +12,7 @@ void	PhoneBook::add()
 	std::cout << "Contact added." << std::endl << std::endl;
 }
 
-void	PhoneBook::search()
+void	PhoneBook::search() const
 {
 	std::string	contactIndex;
 
@@ -48,7 +48,7 @@ void	PhoneBook::search()
 	std::cout << std::endl;
 }
 
-void	PhoneBook::display(int index)
+void	PhoneBook::display(int index) const
 {
 	std::cout << std::endl;
 	std::cout << "First name: " << contacts[index].getField("first") << std::endl;
@@ -58,7 +58,7 @@ void	PhoneBook::display(int index)
 	std::cout << "Darkest secret: " << contacts[index].getField("secret") << std::endl;
 }
 
-void	PhoneBook::printRow(std::string field1, std::string field2, std::string field3, std::string field4)
+void	PhoneBook::printRow(std::string field1, std::string field2, std::string field3, std::string field4) const
 {
 	std::cout << std::setw(10) << field1 << "|";
 	std::cout << std::setw(10) << field2 << "|";
@@ -67,7 +67,7 @@ void	PhoneBook::printRow(std::string field1, std::string field2, std::string fie
 	std::cout << std::endl;
 }
 
-void	PhoneBook::printRow(int field1, std::string field2, std::string field3, std::string field4)
+void	PhoneBook::printRow(int field1, std::string field2, std::string field3, std::string field4) const
 {
 	std::cout << std::setw(10) << field1 << "|";
 	std::cout << std::setw(10) << field2 << "|";

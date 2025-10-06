@@ -24,7 +24,7 @@ bool Contact::setField(std::string fieldName, std::string *field)
 	}
 }
 
-std::string Contact::getField(std::string field)
+std::string Contact::getField(std::string field) const
 {
 	if (field == "first")
 		return(firstName);
@@ -39,7 +39,7 @@ std::string Contact::getField(std::string field)
 	return (NULL);
 }
 
-std::string Contact::getField(std::string field, size_t length)
+std::string Contact::getField(std::string field, size_t length) const
 {
 	std::string	result;
 

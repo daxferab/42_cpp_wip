@@ -16,8 +16,8 @@ class Contact
 		bool		setField(std::string fieldName, std::string *field);
 	public:
 		void		fill();
-		std::string	getField(std::string field);
-		std::string getField(std::string field, size_t length);
+		std::string	getField(std::string field) const;
+		std::string getField(std::string field, size_t length) const;
 };
 
 #endif
