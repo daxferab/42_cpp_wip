@@ -81,14 +81,18 @@ bool	Account::makeWithdrawal( int withdrawal )
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex << ";";
 	std::cout << "p_amount:" << _amount << ";";
-	std::cout << "withdrawal:" << withdrawal << ";";
 	if (_amount >= withdrawal)
-	_amount -= withdrawal;
-	_totalAmount -= withdrawal;
-	_nbWithdrawals++;
-	_totalNbWithdrawals++;
-	std::cout << "amount:" << _amount << ";";
-	std::cout << "nb_withdrawals:" << _nbWithdrawals;
+	{
+		std::cout << "withdrawal:" << withdrawal << ";";
+		_amount -= withdrawal;
+		_totalAmount -= withdrawal;
+		_nbWithdrawals++;
+		_totalNbWithdrawals++;
+		std::cout << "amount:" << _amount << ";";
+		std::cout << "nb_withdrawals:" << _nbWithdrawals;
+	} else {
+		std::cout << "withdrawal:refused";
+	}
 	std::cout << std::endl;
 	return (true);
 }
@@ -111,8 +115,16 @@ void	Account::displayStatus( void ) const
 //TODO: format  [AAAAMMDD_HHMMSS]
 void	Account::_displayTimestamp( void )
 {
-	std::time_t	timestamp;
+	std::time_t	timestamp = time(NULL);
+	std::tm		*timelocal = std::localtime(&timestamp);
 
-	timestamp = time(NULL);
-	std::cout << "[" << timestamp << "] ";
+	std::cout << "[";
+	std::cout << timelocal->tm_year + 1900;
+	std::cout << (timelocal->tm_mon < 9 ? "0" : "") << timelocal->tm_mon + 1;
+	std::cout << (timelocal->tm_mday < 10 ? "0" : "") << timelocal->tm_mday;
+	std::cout << "_";
+	std::cout << (timelocal->tm_hour < 10 ? "0" : "") << timelocal->tm_hour;
+	std::cout << (timelocal->tm_min < 10 ? "0" : "") << timelocal->tm_min;
+	std::cout << (timelocal->tm_sec < 10 ? "0" : "") << timelocal->tm_sec;
+	std::cout << "] ";
 }
