@@ -13,7 +13,7 @@ private:
 public:
 	HumanB(const std::string name);
 	void	setWeapon(Weapon &weapon);
-	void	attack(void);
+	void	attack(void) const;
 };
 
 #endif
