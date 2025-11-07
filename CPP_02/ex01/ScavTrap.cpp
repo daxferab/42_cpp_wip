@@ -7,21 +7,21 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap " << name << " was destroyed." << std::endl;
+	std::cout << "ScavTrap " << _name << " was destroyed." << std::endl;
 }
 
 void	ScavTrap::attack(const std::string& target)
 {
-	if (energyPoints > 0)
+	if (_energyPoints > 0)
 	{
-		energyPoints--;
-		std::cout << "ScavTrap " << name << " attacks " << target << " causing " << attackDamage << " points of damage." << std::endl;
+		_energyPoints--;
+		std::cout << "ScavTrap " << _name << " attacks " << target << " causing " << _attackDamage << " points of damage." << std::endl;
 	}
 	else
-		std::cout << "ScavTrap " << name << " ran out of energy points." << std::endl;
+		std::cout << "ScavTrap " << _name << " ran out of energy points." << std::endl;
 }
 
 void	ScavTrap::guardGate() const
 {
-	std::cout << "Scavtrap " << name << " is now in Gate keeper mode." << std::endl;
+	std::cout << "Scavtrap " << _name << " is now in Gate keeper mode." << std::endl;
 }

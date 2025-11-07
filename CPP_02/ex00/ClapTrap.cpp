@@ -40,7 +40,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &other)
 	}
 	std::cout << "ClapTrap Assignment Operator Called" << std::endl;
 
-	return (*this); // Required for chaining
+	return (*this);
 }
 
 ClapTrap::~ClapTrap()

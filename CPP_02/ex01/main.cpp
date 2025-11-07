@@ -3,7 +3,7 @@
 
 int	main(void)
 {
-	ScavTrap	*Berta = new ScavTrap("name");
+	ScavTrap	*Berta = new ScavTrap("Berta");
 	std::string	target = "Dax";
 
 	(*Berta).takeDamage(9);
